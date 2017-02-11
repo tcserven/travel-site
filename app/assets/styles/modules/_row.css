@@ -6,12 +6,20 @@
 		margin-right: -65px;
 	}
 
+	&--gutters-large {
+		margin-right: -100px;
+	}
+
 	/*Here were trying to add space between our columns, so we use a modifier BEM class. This targets all div children of the div parent with a class of gutters*/
 	&--gutters > div {
 		/*This originally broke the code, pushes past the 100% width.*/
 		padding-right: 65px;
 		/*fixed it with this, which we put in our global CSS rules*/
 		/*box-sizing: border-box;*/
+	}
+
+	&--gutters-large > div {
+		padding-right: 100px;
 	}
 
 	&__b-margin-until-medium {
@@ -32,6 +40,11 @@
 
 		&__medium-4--larger {
 			width: 37%;	
+		}
+
+		&__medium-6 {
+			float: left;
+			width: 50%;
 		}
 
 		&__medium-8 {
