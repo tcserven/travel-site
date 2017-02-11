@@ -1,0 +1,17 @@
+body {
+	font-family: "Roboto", sans-serif;
+	color: #333;
+}
+
+img {
+	max-width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/*originally got an undefined error here, thats because in our main.css file, global is being imported BEFORE the variables*/
+a {
+	color: $mainOrange;
+}

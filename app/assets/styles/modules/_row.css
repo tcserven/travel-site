@@ -1,0 +1,46 @@
+.row {
+	/*background: yellow;*/
+	@mixin clearfix;
+
+	&--gutters {
+		margin-right: -65px;
+	}
+
+	/*Here were trying to add space between our columns, so we use a modifier BEM class. This targets all div children of the div parent with a class of gutters*/
+	&--gutters > div {
+		/*This originally broke the code, pushes past the 100% width.*/
+		padding-right: 65px;
+		/*fixed it with this, which we put in our global CSS rules*/
+		/*box-sizing: border-box;*/
+	}
+
+	&__b-margin-until-medium {
+		margin-bottom: 1rem;
+	}
+
+	@mixin atMedium {
+
+		&__b-margin-until-medium {
+			margin-bottom: 0;
+		}
+
+		&__medium-4 {
+		float: left;
+		/*Think of row as 12 columns, each row is 100/12 = 8.333 x4 */
+		width: 33.33%;
+		}
+
+		&__medium-4--larger {
+			width: 37%;	
+		}
+
+		&__medium-8 {
+			float: right;
+			width: 66.66%;
+		}
+
+		&__medium-8--smaller {
+			width: 63%;	
+		}
+	}
+}
