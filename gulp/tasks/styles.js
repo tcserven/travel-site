@@ -4,12 +4,13 @@ var gulp = require('gulp'),
 	cssvars = require("postcss-simple-vars"),
 	nested = require("postcss-nested"),
 	mixins = require("postcss-mixins"),
-	cssImport = require("postcss-import");
+	cssImport = require("postcss-import"),
+	hexrgba = require("postcss-hexrgba");
 
 gulp.task("styles", function() {
 	return gulp.src("./app/assets/styles/styles.css")
 	// postcss is expecting an array. order of this stuff is important. 
-	.pipe(postcss([cssImport, mixins, cssvars, nested, autoPrefixer]))
+	.pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoPrefixer]))
 	.on("error", function(errorInfo) {
 		console.log(errorInfo.toString());
 		this.emit("end");
