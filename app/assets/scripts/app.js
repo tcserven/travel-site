@@ -21,15 +21,22 @@
 
 // person(john.name, john.favColour);
 
-// wont work without webpack
-var Person = require("./modules/Person")
+// wont work without webpack (part of NODE JS)
+// var Person = require("./modules/Person")
+// We can do the same thing with es6
+import Person from './modules/Person';
 
 // alert('test for abcasdasd');
-
+class Adult extends Person {
+	payTaxes() {
+		console.log(this.name + ' now owes 0$ in taxes');
+	}
+}
 
 var john = new Person('john', 'blue');
-// john.greet();
-var jane = new Person('jane', 'gfreen');
-// jane.greet();
+john.greet();
+var jane = new Adult('jane', 'gfreen');
+jane.greet();
+jane.payTaxes();
 
 
