@@ -43,7 +43,7 @@
 
 			/*targets the logo only when its got the dark class*/
 			.site-header--dark & {
-				transform: scale(0.57);
+				transform: scale(0.55);
 			}
 		}
 	}
